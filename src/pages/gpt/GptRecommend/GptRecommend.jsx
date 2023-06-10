@@ -2,6 +2,7 @@ import { Input, Text, InputContainer,Button, WordBlockStyle,Recipe,WordBlockCont
 import { useState, useId } from "react";
 import GptResponse from "./GptResponse";
 import gptDefaultImage from '../../../data/images/gptdefault.png';
+import {FiSearch} from "react-icons/fi"
 
 let wordBlockId=1;
 
@@ -51,7 +52,7 @@ const GptRecommend = () => {
           <Form>
             <Input onKeyUp={MakeWord} onChange={handleChange} value={inputValue} placeholder="GPT에게 물어보세요."/>
             <Button onClick={wordBlock.length!==0 ? <GptResponse setGptResponse={setGptResponse}/> : null}>
-              버튼
+              {<FiSearch size={20}/>}
             </Button>
           </Form>
         </SearchContainer>
