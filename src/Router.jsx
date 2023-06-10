@@ -10,7 +10,7 @@ export const Router = () => {
   return (
     <Routes>
       {
-        menuData.map((menu) => <Route path={menu.path} element={menu.components} />)
+        menuData.map((menu) => <Route id={menu.id} path={menu.path} element={menu.components} />)
       }
       <Route element={<PublicRoute />}>
         <Route path="/auth/join" element={<JoinPage />} />

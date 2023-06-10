@@ -1,4 +1,4 @@
-import RecipePage from "../pages/recipe/RecipePage"
+import RecipePage from "../pages/recipe/RecipePage/RecipePage"
 
 const menuData = [
   {
