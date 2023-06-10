@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchRecipeInput from "../SearchRecipeInput/SearchRecipeInput"
 import RecipeSelectBox from '../RecipeSelectBox/RecipeSelectBox';
 import { SelectContainer } from "./RecipeListController.style";
 
 const RecipeListController = () => {
+  const [isFocus, setIsFocus] = useState(false);
   return (
     <div>
-      <SelectContainer>
-        <RecipeSelectBox/>
-        <RecipeSelectBox/>
-      </SelectContainer>
-      <SearchRecipeInput/>
+      <SearchRecipeInput setIsFocus={setIsFocus}/>
+      {
+        isFocus && (
+          <SelectContainer>
+            <RecipeSelectBox/>
+            <RecipeSelectBox/>
+          </SelectContainer>
+        )
+      }
     </div>
   );
 };

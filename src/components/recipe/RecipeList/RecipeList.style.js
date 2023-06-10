@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const RecipeListContainer = styled.div`
-  overflow-x: scroll;
+  width: 97vw;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 `;
 

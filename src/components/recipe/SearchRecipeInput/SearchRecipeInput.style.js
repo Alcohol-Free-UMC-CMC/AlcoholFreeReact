@@ -16,4 +16,4 @@ const SearchButton = styled.button`
   height: 20px;
 `;
 
-export { InputContainer, SearchButton }
+export { InputContainer, SearchButton };

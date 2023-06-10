@@ -17,7 +17,7 @@ const RecipeList = () => {
     name: "jjj"
   }]);
   return (
-    <div style={{width: "100vw"}}>
+    <div>
       <RecipeListContainer>
         {
           recipeList.map((recipe) => 
