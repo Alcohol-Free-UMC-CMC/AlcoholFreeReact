@@ -1,4 +1,4 @@
-import { Input, Text, InputContainer,Button, WordBlockStyle,Recipe,WordBlockContainer, ExplainText, Form, SearchContainer } from "./GptRecommend.style";
+import { Input, Text,H3, InputContainer,ShareRecipe,CocktailInfo,Button,ThisIsRecipe, WordBlockStyle,Recipe,WordBlockContainer, ExplainText, Form, SearchContainer } from "./GptRecommend.style";
 import { useState, useId } from "react";
 import GptResponse from "./GptResponse";
 import gptDefaultImage from '../../../data/images/gptdefault.png';
@@ -23,7 +23,6 @@ const GptRecommend = () => {
   
   const handleSpace = () => {
     setWordBlock([...wordBlock, {inputValue: inputValue, id: wordBlockId++}]);
-    console.log("단어 배열:", wordBlock);
     setInputValue('');
   };
 
@@ -49,9 +48,9 @@ const GptRecommend = () => {
               </WordBlockStyle>
             ))}
           </WordBlockContainer>
-          <Form>
+          <Form onSubmit={(event) => event.preventDefault()}>
             <Input onKeyUp={MakeWord} onChange={handleChange} value={inputValue} placeholder="GPT에게 물어보세요."/>
-            <Button onClick={wordBlock.length!==0 ? <GptResponse setGptResponse={setGptResponse}/> : null}>
+            <Button onClick={() => (GptResponse(wordBlock, setGptResponse, setWordBlock))}>
               {<FiSearch size={20}/>}
             </Button>
           </Form>
@@ -60,7 +59,15 @@ const GptRecommend = () => {
       <Recipe> {/* GPT 추천 레시피 */}
               {gptResponse === null
               ?<img src={gptDefaultImage} width='100%' height='100%'/>
-              :<div>GPT 추천 레시피입니다.</div>
+              :
+              <div>
+                <ThisIsRecipe>GPT가 추천하는 레시피는...</ThisIsRecipe>
+                <CocktailInfo><H3>칵테일 이름</H3>{gptResponse.name}</CocktailInfo>
+                <CocktailInfo><H3>설명</H3><div>{gptResponse.description}</div></CocktailInfo>
+                <div>
+                  <ShareRecipe>레시피 공유하기</ShareRecipe>
+                </div>
+              </div>
               }
       </Recipe>
     </div>

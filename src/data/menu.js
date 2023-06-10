@@ -1,7 +1,7 @@
 import RecipePage from "../pages/recipe/RecipePage/RecipePage";
 import GptRecipePage from "../pages/gptrecipe/GptRecipePage/GptRecipePage";
-import GptRecommend from "../pages/gpt/GptRecommend/GptRecommend"
 import GuidelinePage from "../pages/guide/GuidelinePage";
+import GptRecommend from "../pages/gpt/GptRecommend/GptRecommend";
 
 const menuData = [
   {
@@ -20,7 +20,7 @@ const menuData = [
     id: 3,
     name: "초보가이드",
     path: "/guide",
-    components: <GuidelinePage/>,
+    components: <GuidelinePage />,
   },
   {
     id: 4,
