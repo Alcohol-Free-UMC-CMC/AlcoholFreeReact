@@ -19,6 +19,7 @@ export const Router = () => {
       <Route element={<PublicRoute />}>
         <Route path="/auth/join" element={<JoinPage />} />
         <Route path="/auth/login" element={<LoginPage />} />
+        {/* <Route path="/gptadvice" element={<GptRecommend />} /> */}
       </Route>
       <Route element={<PrivateRoute />}>
         {/* <Route path="/main" element={<MainPage />} /> */}
