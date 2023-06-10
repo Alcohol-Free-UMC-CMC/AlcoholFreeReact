@@ -21,7 +21,7 @@ const GptRecipeDetailPage = () => {
     <RecipeDetailContainer>
       <HeartContainer>
         {userLike.find((like) => like === params.id) ? (
-          <AiFillHeart color="red" />
+          <AiFillHeart fill="red" color="red" />
         ) : (
           <AiOutlineHeart />
         )}

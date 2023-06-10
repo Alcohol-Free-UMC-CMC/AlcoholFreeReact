@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { RecipeDetailContainer, AdditionalInfoContainer, RecipeDetailCard, HashTagContainer } from './RecipeDetailPage.style'
-import HashTag from "../HashTag/HashTag"
+import HashTag from "../../../components/recipe/HashTag/HashTag"
 import IngredientInfo from '../../../components/recipe/IngredientInfo/IngredientInfo';
 
 const RecipeDetailPage = () => {
