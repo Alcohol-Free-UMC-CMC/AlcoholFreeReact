@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import SearchRecipeInput from "../SearchRecipeInput/SearchRecipeInput"
-import RecipeSelectBox from '../RecipeSelectBox/RecipeSelectBox';
+import IngredientSelectBox from '../IngredientSelectBox/IngredientSelectBox';
 import { SelectContainer } from "./RecipeListController.style";
+import { useKeywordIngredientsQuery } from "../../../hooks/keyword/useKeywordIngredientsQuery"
 
 const RecipeListController = () => {
   const [isFocus, setIsFocus] = useState(false);
+  const { data } = useKeywordIngredientsQuery();
   return (
     <div>
       <SearchRecipeInput setIsFocus={setIsFocus}/>
       {
         isFocus && (
           <SelectContainer>
-            <RecipeSelectBox/>
-            <RecipeSelectBox/>
+            <IngredientSelectBox data={data}/>
+            <IngredientSelectBox/>
           </SelectContainer>
         )
       }
