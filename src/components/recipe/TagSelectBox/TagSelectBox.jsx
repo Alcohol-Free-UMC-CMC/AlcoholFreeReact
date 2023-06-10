@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from "./RecipeSelectBox.style";
+import { Select } from "./TagSelectBox.style";
 
 const RecipeSelectBox = () => {
   return (

@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "immer": "^10.0.2"
+    "immer": "^10.0.2",
+    "msw": "^1.2.2"
   }
 }

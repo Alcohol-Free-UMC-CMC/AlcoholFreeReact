@@ -1,18 +1,16 @@
 import { BottomTabContainer, TabsContainer, BorderDiv } from "./BottomTab.style";
+import { BottomMenu } from "../../../data/bottomMenu";
+import MenuButton from "../Menus/MenuButton/MenuButton";
 
 const BottomTab = () => {
     return(
         <BottomTabContainer>
             <TabsContainer>
-                <BorderDiv>
-                    야메레시피
-                </BorderDiv>
-                <BorderDiv>
-                    홈
-                </BorderDiv>
-                <BorderDiv>
-                    마이페이지
-                </BorderDiv>
+                {
+                    BottomMenu.map((menu, index) => (
+                        <MenuButton id={menu.id} tabName={menu.name} path={menu.path} icon={menu.icon} key={index}/>
+                    ))
+                }
             </TabsContainer>
         </BottomTabContainer>
     );

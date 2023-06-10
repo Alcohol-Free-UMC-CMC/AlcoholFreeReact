@@ -10,7 +10,7 @@ const Header = () => {
     <HeaderContainer>
     <LogoButton></LogoButton>
       {
-        menuData.map((menu) => <MenuButton id={menu.id} name={menu.name} path={menu.path}/>)
+        menuData.map((menu, index) => <MenuButton id={menu.id} name={menu.name} path={menu.path} key={index}/>)
       }
     </HeaderContainer>
   );

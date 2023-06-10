@@ -11,4 +11,4 @@ const MenuButtonContainer = styled.button`
   cursor: pointer;
 `;
 
-export { MenuButtonContainer }
+export { MenuButtonContainer };

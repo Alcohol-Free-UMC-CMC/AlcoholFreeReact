@@ -41,7 +41,7 @@ const Form = styled.form`
 const Button = styled.button`
   position: absolute;
   left: 85%;
-  top: 30%;
+  top: 25%;
 `;
 
 const Text = styled.div`

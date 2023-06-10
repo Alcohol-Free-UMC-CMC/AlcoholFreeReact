@@ -14,7 +14,7 @@ const GptRecipePage = () => {
     <GptPageContainer>
       <RecipeListContainer>
         {
-          gptRecipe.map(gptRecipeElement => <GptRecipeCard gptRecipe={gptRecipeElement}/>)
+          gptRecipe.map((gptRecipeElement, index) => <GptRecipeCard gptRecipe={gptRecipeElement} key={index}/>)
         }
       </RecipeListContainer>
     </GptPageContainer>
