@@ -12,4 +12,8 @@ const GptRecipeCardContainer = styled.div`
   margin: 1vw;
 `;
 
-export { GptRecipeCardContainer };
+const HeartContainer = styled.div`
+  margin-left: 30%;
+`;
+
+export { GptRecipeCardContainer, HeartContainer };
