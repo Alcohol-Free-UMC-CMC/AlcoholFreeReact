@@ -58,6 +58,7 @@ const Img = styled.div`
   width: 40%;
   border-radius: 15px;
   background-image: ${props => `url(${props.src})`};
+  background-size: contain;
 `;
 
 const ScrollText = styled.div`
@@ -80,7 +81,7 @@ const GuidelinePage = () => {
   });
   const [isBoxShow, setIsBoxShow] = useState(false);
   const [isBoxGraShow, setIsBoxGraShow] = useState(false);
-  const [scrollData, setScrollData] = useState([]);
+  const [scrollData, setScrollData] = useState([]); // 초기값을 빈 배열로 설정
 
   useEffect(() => {
     // 서버에서 초기 스크롤 데이터 가져오기
@@ -88,15 +89,20 @@ const GuidelinePage = () => {
   }, []);
 
   const fetchData = (icon) => {
-    // 아이콘 클릭에 따라서 다르게 요청 보내기
-    let requestUrl = '/api/scroll-data';
+    let requestUrl = 'http://13.124.104.174:8080/app/guide/tool';
     if (icon === 'icon2') {
-      requestUrl = '/api/other-scroll-data';
+      requestUrl = 'http://13.124.104.174:8080/app/guide/ingredient';
     }
 
-    customAxios.get(requestUrl) // customAxios를 사용하여 요청 보내기
+    customAxios
+      .get(requestUrl)
       .then(response => {
-        setScrollData(response.data);
+        const responseData = response.data.result; // result 속성에 배열 데이터가 있음
+        if (Array.isArray(responseData)) {
+          setScrollData(responseData);
+        } else {
+          console.error('Scroll data is not an array:', responseData);
+        }
       })
       .catch(error => {
         console.error('Error fetching scroll data:', error);
@@ -134,12 +140,21 @@ const GuidelinePage = () => {
           </Text>
           {
             isBoxShow && (
-              <div>첫 번째로, 작년 한 회사의 기업부설연구소의 인턴으로 일했을 당시, 첫 업무였기 때문에 많이 부족하였습니다.  하지만 저는 빠른 적응력을 보이며 제 파트를 2개월 안에 마무리 할 수 있었습니다. 
-                 2개월 안에 마무리하기 위해서 우선 처음 접하는 회사에서 다루는 프로그래밍 언어가 걱정되었습니다. 저는 질문을 두려워하지 않으며 연구소장님과 대화를 나누고, 부서에서 팀원들과 매주 
-                2시간씩 하는 JAVA 및 jQuery 스터디를 추진하여 맡은 업무에 빠르게 적응하였습니다. 이러한 저의 역량을 바탕으로 소프트웨어 개발을 책임감있게 마무리 할 수 있습니다. 
-              두 번째로 미국 인턴
-              또한, 올해 대학교 소프트웨어 해외연수 학생으로 선발되어 미국에서 프로젝트 경험을 쌓았습니다. 선발되기 전과 후에도 저는 복수전공생으로 전공생보다 전공 수업을 적게 들었기 때문에 보다 많은 것을 
-              배우려는 간절한 마음가짐으로 학과 공부를 해왔습니다. 저는 학과 팀 프로젝트 발표 때에도 항상 팀마다 질문을 2개씩 준비하며 학우들에게 많은 것들을 배우려고 노력하였습니다. 결과적으로 이러한 마음가짐과 경험들이 밑거름되어 이번 해외연수때, 미국에서 세미나가 열릴 때마다 다양한 관점에서 고민들을 질문하며 발표자로부터 다양한 경험과 지식을 배울 수 있었습니다.</div>
+              <Scroll>
+        <ScrollBox>
+          {scrollData.map(item => (
+          <div key={item.id}>
+          <ScrollTitle>{item.name}</ScrollTitle>
+          <ScrollDiv>
+            <Img src={item.imgUrl} />
+            <ScrollText>
+              <p>{item.description}</p>
+            </ScrollText>
+          </ScrollDiv>
+            </div>
+          ))}
+        </ScrollBox>
+      </Scroll>
             )
           }
         </Box>
@@ -154,31 +169,25 @@ const GuidelinePage = () => {
           </Text>
           {
             isBoxGraShow && (
-              <div>첫 번째로, 작년 한 회사의 기업부설연구소의 인턴으로 일했을 당시, 첫 업무였기 때문에 많이 부족하였습니다.  하지만 저는 빠른 적응력을 보이며 제 파트를 2개월 안에 마무리 할 수 있었습니다. 
-                 2개월 안에 마무리하기 위해서 우선 처음 접하는 회사에서 다루는 프로그래밍 언어가 걱정되었습니다. 저는 질문을 두려워하지 않으며 연구소장님과 대화를 나누고, 부서에서 팀원들과 매주 
-                2시간씩 하는 JAVA 및 jQuery 스터디를 추진하여 맡은 업무에 빠르게 적응하였습니다. 이러한 저의 역량을 바탕으로 소프트웨어 개발을 책임감있게 마무리 할 수 있습니다. 
-              두 번째로 미국 인턴
-              또한, 올해 대학교 소프트웨어 해외연수 학생으로 선발되어 미국에서 프로젝트 경험을 쌓았습니다. 선발되기 전과 후에도 저는 복수전공생으로 전공생보다 전공 수업을 적게 들었기 때문에 보다 많은 것을 
-              배우려는 간절한 마음가짐으로 학과 공부를 해왔습니다. 저는 학과 팀 프로젝트 발표 때에도 항상 팀마다 질문을 2개씩 준비하며 학우들에게 많은 것들을 배우려고 노력하였습니다. 결과적으로 이러한 마음가짐과 경험들이 밑거름되어 이번 해외연수때, 미국에서 세미나가 열릴 때마다 다양한 관점에서 고민들을 질문하며 발표자로부터 다양한 경험과 지식을 배울 수 있었습니다.</div>
-            )
-          }
-        </Box>
-      </Layout>
-      <Scroll>
+              <Scroll>
         <ScrollBox>
           {scrollData.map(item => (
             <div key={item.id}>
               <ScrollTitle>{item.name}</ScrollTitle>
               <ScrollDiv>
-                <Img src={item.image} />
+                <Img src={item.imgUrl} />
                 <ScrollText>
-                  <p>{item.text}</p>
+                  <p>{item.description}</p>
                 </ScrollText>
               </ScrollDiv>
             </div>
           ))}
         </ScrollBox>
-      </Scroll>
+      </Scroll> )
+          }
+        </Box>
+      </Layout>
+     
     </div>
   );
 };

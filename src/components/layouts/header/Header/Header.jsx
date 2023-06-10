@@ -6,8 +6,9 @@ import MenuButton from '../../Menus/MenuButton/MenuButton';
 
 const Header = () => {
   return (
+    
     <HeaderContainer>
-      <LogoButton/>
+    <LogoButton></LogoButton>
       {
         menuData.map((menu, index) => <MenuButton id={menu.id} name={menu.name} path={menu.path} key={index}/>)
       }

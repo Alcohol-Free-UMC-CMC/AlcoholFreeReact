@@ -9,6 +9,7 @@ const RecipeListController = () => {
   const { data } = useKeywordIngredientsQuery();
   return (
     <div>
+      <p style={{ fontWeight: '600', position: 'relative', top: '10%'}}>어떤 칵테일을 찾으시나요?</p>
       <SearchRecipeInput setIsFocus={setIsFocus}/>
       {
         isFocus && (

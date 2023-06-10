@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { reset } from "styled-reset";
+import '../assets/fonts/fonts.css'
 
 export const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -8,12 +9,12 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     color: black;
-    font-family: "GmarketSans", Arial, Helvetica, sans-serif
+    font-family: "Pretendard-Regular", sans-serif
   }
   
   body {
     max-width: 500px;
-    font-family: "GmarketSans", Arial, Helvetica, sans-serif
+    font-family: "Pretendard-Regular", sans-serif
   }
   
   a {
