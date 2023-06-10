@@ -1,31 +1,25 @@
 import RecipePage from "../pages/recipe/RecipePage";
 import GptRecommend from "../pages/gpt/GptRecommend/GptRecommend";
 
-const menuData = [
+const BottomMenu = [
   {
     id: 1,
-    name: "레시피",
-    path: "/",
-    components: <RecipePage />,
+    name: "야메레시피",
+    path: "/yame",
+    components: <></>,
   },
   {
     id: 2,
-    name: "GPT추천",
+    name: "홈",
     path: "/gptadvice",
     components: <GptRecommend />,
   },
   {
     id: 3,
-    name: "초보가이드",
+    name: "마이페이지",
     path: "/guide",
-    components: <></>,
-  },
-  {
-    id: 4,
-    name: "야메레시피",
-    path: "/yame",
     components: <></>,
   },
 ];
 
-export { menuData };
+export { BottomMenu };
