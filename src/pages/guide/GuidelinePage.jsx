@@ -136,7 +136,7 @@ const GuidelinePage = () => {
           />
           <Text>
             <p>반드시 필요합니다.</p>
-            <p>홈테일 기본 도구</p>
+            <p style={{ fontSize: '1.5rem' }}>홈테일 기본 도구</p>
           </Text>
           {
             isBoxShow && (
@@ -147,7 +147,7 @@ const GuidelinePage = () => {
           <ScrollTitle>{item.name}</ScrollTitle>
           <ScrollDiv>
             <Img src={item.imgUrl} />
-            <ScrollText>
+            <ScrollText style={{padding: '5%'}}>
               <p>{item.description}</p>
             </ScrollText>
           </ScrollDiv>
@@ -165,7 +165,7 @@ const GuidelinePage = () => {
           />
           <Text>
             <p>갖고 있으면 좋아요!</p>
-            <p>홈테일 재료</p>
+            <p style={{ fontSize: '1.5rem' }}>홈테일 재료</p>
           </Text>
           {
             isBoxGraShow && (
@@ -176,7 +176,7 @@ const GuidelinePage = () => {
               <ScrollTitle>{item.name}</ScrollTitle>
               <ScrollDiv>
                 <Img src={item.imgUrl} />
-                <ScrollText>
+                <ScrollText style={{padding: '5%'}}>
                   <p>{item.description}</p>
                 </ScrollText>
               </ScrollDiv>
