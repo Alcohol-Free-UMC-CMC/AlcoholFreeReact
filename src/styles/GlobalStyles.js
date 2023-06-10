@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: black;
     font-family: "GmarketSans", Arial, Helvetica, sans-serif
   }
   
