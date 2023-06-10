@@ -16,7 +16,7 @@ const App = () => {
         <GlobalStyles />
         <BrowserRouter>
           <Header />
-          <div style={{ height: "calc(100vh - 180px)", overflowY: "scroll" }}>
+          <div style={{ height: "calc(100vh - 190px)", overflowY: "scroll" }}>
             <Router />
           </div>
           <BottomTab />
