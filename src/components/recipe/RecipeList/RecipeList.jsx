@@ -21,7 +21,7 @@ const RecipeList = () => {
       <RecipeListContainer>
         {
           recipeList.map((recipe) => 
-            <RecipeCard key={recipe.id}/>)
+            <RecipeCard key={recipe.id} id={recipe.id}/>)
         }
       </RecipeListContainer>
     </div>

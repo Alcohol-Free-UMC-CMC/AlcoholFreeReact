@@ -1,4 +1,6 @@
 import RecipePage from "../pages/recipe/RecipePage/RecipePage"
+import GptRecipePage from "../pages/gptrecipe/GptRecipePage/GptRecipePage"
+
 
 const menuData = [
   {
@@ -18,9 +20,9 @@ const menuData = [
     components: <></>
   }, {
     id: 4,
-    name: "야메레시피",
-    path: "/yame",
-    components: <></>
+    name: "GPT레시피",
+    path: "/gptrecipe",
+    components: <GptRecipePage/>
   }
 ];
 
