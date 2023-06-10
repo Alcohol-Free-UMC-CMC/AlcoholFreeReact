@@ -12,7 +12,8 @@ const RecipeListController = ({ refetch, setInputValue, setTagValue, setIngredie
   const { data: tag, isSuccess: isTagSuccess } = useKeywordTagsQuery();
   return (
     <div>
-      <SearchRecipeInput refetch={refetch} setIsFocus={setIsFocus} setInputValue={setInputValue}/>
+      <p style={{ fontWeight: '600', position: 'relative', top: '10%'}}>어떤 칵테일을 찾으시나요?</p>
+      <SearchRecipeInput setIsFocus={setIsFocus}/>
       {
         isFocus && (
           <SelectContainer>

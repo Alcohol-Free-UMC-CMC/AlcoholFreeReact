@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
-  border: 2px solid black;
-  height: 100px;
+  border-bottom: 3px solid #ff5a77;
+  height: 80px;
   width: 100vw;
   align-items: center;
   justify-content: center;
-  display: flex;
+  flex-direction: column;
   flex-direction: row;
 `;
 

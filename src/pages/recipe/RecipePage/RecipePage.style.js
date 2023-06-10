@@ -11,7 +11,9 @@ const RecipePageContainer = styled.div`
 const HomeBanner = styled.div`
   width: 100vw;
   height: 200px;
-  background-color: #D9D9D9;
+  img {
+    width: 100%;
+  }
 `;
 
 const RecipeListContainer = styled.div`
