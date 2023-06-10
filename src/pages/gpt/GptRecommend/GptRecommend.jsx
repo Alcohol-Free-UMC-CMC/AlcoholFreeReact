@@ -4,13 +4,13 @@ import GptResponse from "./GptResponse";
 import gptDefaultImage from '../../../data/images/gptdefault.png';
 import {FiSearch} from "react-icons/fi"
 
+
 let wordBlockId=1;
 
 const GptRecommend = () => {
   const [inputValue, setInputValue] = useState('');
   const [wordBlock, setWordBlock] = useState([]);
   const [gptResponse, setGptResponse] = useState(null);
-
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };

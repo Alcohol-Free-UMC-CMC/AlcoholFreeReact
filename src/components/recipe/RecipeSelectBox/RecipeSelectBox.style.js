@@ -5,6 +5,7 @@ const Select = styled.select`
   background-color: #D9D9D9;
   border-radius: 20px;
   margin-right: 20px;
+  width: 100px;
 `;
 
 export { Select };

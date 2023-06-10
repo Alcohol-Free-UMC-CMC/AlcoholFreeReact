@@ -14,4 +14,12 @@ const HomeBanner = styled.div`
   background-color: #D9D9D9;
 `;
 
-export { RecipePageContainer, HomeBanner };
+const RecipeListContainer = styled.div`
+  width: 97vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+`;
+
+
+export { RecipePageContainer, HomeBanner, RecipeListContainer };

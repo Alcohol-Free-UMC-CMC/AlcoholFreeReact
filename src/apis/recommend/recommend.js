@@ -1,9 +1,11 @@
 import { customAxios } from "../axios/customAxios";
 
-const postRecommend = (userLike) => {
-  return customAxios.post("app/recommend", {
+const getRecommendList = (userLike) => {
+  return customAxios.get("app/recommend/list", {
     userLike: userLike
   })
+  .then(res => res)
+  .then(res => res.data);
 };
 
-export { postRecommend };
+export { getRecommendList };

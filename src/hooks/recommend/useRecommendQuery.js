@@ -1,8 +1,6 @@
 import { useQuery } from "react-query"
-import { postRecommend } from "../../apis/recommend/recommend";
-import { useLikeStore } from "../../store/userLike";
+import { getRecommendList } from "../../apis/recommend/recommend";
 
-export const useCocktailQuery = () => {
-  const { userLike } = useLikeStore();
-  return useQuery(["recommend"], () => postRecommend(userLike));
+export const useRecommendQuery = () => {
+  return useQuery(["recommend"], () => getRecommendList());
 }

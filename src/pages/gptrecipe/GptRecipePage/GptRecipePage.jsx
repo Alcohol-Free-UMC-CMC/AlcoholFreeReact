@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import { GptPageContainer, RecipeListContainer } from "./GptRecipePage.style";
 import GptRecipeCard from "../../../components/gptrecipe/GptRecipeCard/GptRecipeCard"
+import { useRecommendQuery } from "../../../hooks/recommend/useRecommendQuery";
 
 const GptRecipePage = () => {
-  const [gptRecipe, setGptRecipe] = useState([{
-    id: "1765243hjsd",
-    name: "헛개수 헛개수 짱"
-  }, {
-    id: "176524123213d",
-    name: "헛개수 헛개수 짱짱"
-  }]);
+  const { data, isSuccess } = useRecommendQuery();
   return (
     <GptPageContainer>
-      <RecipeListContainer>
-        {
-          gptRecipe.map((gptRecipeElement, index) => <GptRecipeCard gptRecipe={gptRecipeElement} key={index}/>)
-        }
-      </RecipeListContainer>
+      {
+        isSuccess && (
+          <RecipeListContainer>
+            {
+              data.result.map((gptRecipeElement, index) => <GptRecipeCard gptRecipe={gptRecipeElement} key={index}/>)
+            }
+          </RecipeListContainer>
+        )
+      }
     </GptPageContainer>
   );
 };

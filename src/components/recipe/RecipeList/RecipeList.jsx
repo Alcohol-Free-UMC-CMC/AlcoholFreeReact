@@ -1,27 +1,17 @@
 import React, { useState } from 'react';
 import RecipeCard from '../RecipeCard/RecipeCard';
 import { RecipeListContainer } from './RecipeList.style';
+import { useCocktailQuery } from "../../../hooks/cocktail/useCocktailQuery"
 
-const RecipeList = () => {
-  const [recipeList, setRecipeList] = useState([{
-    id: 2321,
-    name: "jjj"
-  }, {
-    id: 12374,
-    name: "jjj"
-  }, {
-    id: 18764,
-    name: "jjj"
-  }, {
-    id: 29803,
-    name: "jjj"
-  }]);
+const RecipeList = (data, isSuccess) => {
   return (
     <div>
       <RecipeListContainer>
         {
-          recipeList.map((recipe) => 
-            <RecipeCard key={recipe.id} id={recipe.id}/>)
+          data && (
+            data.result.map((recipe) => 
+            <RecipeCard key={recipe.id} data={recipe}/>)
+          )
         }
       </RecipeListContainer>
     </div>

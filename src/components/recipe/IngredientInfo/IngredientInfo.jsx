@@ -5,7 +5,7 @@ const IngredientInfo = ({ingredient}) => {
   return (
     <IngredientContainer>
       <p>{ingredient.name}</p>
-      <p>{ingredient.value}</p>
+      <p>{ingredient.amount}</p>
     </IngredientContainer>
   );
 };

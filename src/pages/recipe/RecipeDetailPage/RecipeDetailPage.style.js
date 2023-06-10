@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const RecipeDetailContainer = styled.div`
-  width: 100vw;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
